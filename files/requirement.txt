@@ -1,6 +1,6 @@
 streamlit
+joblib
 nltk
 scikit-learn
 json
-joblib
 random
