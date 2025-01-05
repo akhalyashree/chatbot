@@ -1,26 +1,29 @@
 import os
 import json
 import datetime
-import csv 
+import csv
 import nltk
 import ssl
 import streamlit as st
 import random
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-import joblib 
 
+# Download necessary NLTK data
 ssl._create_default_https_context = ssl._create_unverified_context
 nltk.data.path.append(os.path.abspath("nltk_data"))
 nltk.download('punkt')
 
+# Load intents from JSON
 file_path = os.path.abspath("./intents.json")
 with open(file_path, "r") as file:
     intents = json.load(file)
 
+# Initialize vectorizer and classifier
 vectorizer = TfidfVectorizer()
 clf = LogisticRegression(random_state=0, max_iter=1000)
 
+# Prepare the data for training
 tags = []
 patterns = []
 for intent in intents:
@@ -28,14 +31,10 @@ for intent in intents:
         tags.append(intent['tag'])
         patterns.append(pattern)
 
+# Train the model
 x = vectorizer.fit_transform(patterns)
 y = tags
 clf.fit(x, y)
-
-joblib.dump(clf,"chatbot.joblib")
-joblib.dump(vectorizer,"vectorizer.joblib")
-
-print("Model and vectorizer saved successfully!")
 
 def chatbot(input_text):
     input_text = vectorizer.transform([input_text])
@@ -57,6 +56,7 @@ def main():
     if choice == "Home":
         st.write("Welcome to the chatbot.")
 
+        # Initialize chat log if it doesn't exist
         if not os.path.exists('chat_log.csv'):
             with open('chat_log.csv', 'w', newline='', encoding='utf-8') as csvfile:
                 csv_writer = csv.writer(csvfile)
@@ -111,5 +111,5 @@ def main():
         st.subheader("Conclusion")
         st.write("This project demonstrates how to build a chatbot using NLP and machine learning.")
 
-if __name__ == '__main__':
+if _name_ == '_main_':
     main()
