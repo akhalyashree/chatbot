@@ -1,54 +1,289 @@
- [
+{
+  "intents": [
     {
-        "tag": "greeting",
-        "patterns": ["Hi", "How are you"],
-        "responses": ["Hi How can I assist you?", "I am fine how can I assist you?"]
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "Hello",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Greetings",
+        "What's up?",
+        "Is anyone there?",
+        "Hello chatbot"
+      ],
+      "responses": [
+        "Hello!",
+        "Hi there!",
+        "Hey!",
+        "Greetings!",
+        "Hello, how can I help you with your pet's health today?",
+        "Hi, what pet care questions do you have based on PetMD?"
+      ]
     },
     {
-        "tag":"greeting",
-        "patterns":["Hello"],
-        "responses":["Hello how can i assist you?"]
+      "tag": "goodbye",
+      "patterns": [
+        "Bye",
+        "Goodbye",
+        "See you later",
+        "Talk to you later",
+        "I'm leaving",
+        "Have a good day",
+        "Farewell"
+      ],
+      "responses": [
+        "Goodbye!",
+        "See you later!",
+        "Have a great day!",
+        "Take care!",
+        "Bye, feel free to reach out again if you need any pet health information from PetMD."
+      ]
     },
     {
-        "tag": "goodbye",
-        "patterns": ["Bye", "See you later", "Goodbye", "Take care"],
-        "responses": ["Goodbye", "See you later", "Take care"]
+      "tag": "general_pet_care",
+      "patterns": [
+        "How to care for a [pet_type]?",
+        "What are the basics of [pet_type] care?",
+        "Tell me about [pet_type] care",
+        "What does a [pet_type] need?",
+        "Tips for [pet_type] care",
+        "How to look after my [pet_type]?"
+      ],
+      "responses": [
+        "General care for a {pet_type} involves understanding their specific needs. PetMD provides information on breeds, puppies/kittens, adult and senior care. What specific aspect of {pet_type} care are you interested in?",
+        "The basic needs of a {pet_type} include proper nutrition, fresh water, a safe environment, and veterinary care. PetMD has articles on these topics. What else would you like to know?",
+        "Caring for a {pet_type} can be rewarding! PetMD has resources on diet, health, and behavior. What are you curious about?",
+        "Looking after your {pet_type} well ensures their health and happiness. PetMD covers...",
+        "Here are some general tips for {pet_type} care based on PetMD..."
+      ]
     },
     {
-        "tag": "thanks",
-        "patterns": ["Thank you", "Thanks", "Thanks a lot", "I appreciate it"],
-        "responses": ["You're welcome", "No problem", "Glad I could help"]
+      "tag": "feeding_nutrition",
+      "patterns": [
+        "What should I feed my [pet_type]?",
+        "Best food for a [age] [pet_type]?",
+        "How much to feed a [weight] [pet_type]?",
+        "Nutritional needs of a [pet_type]?",
+        "Is [food_item] safe for my [pet_type]?",
+        "What are the signs of a food allergy in [pet_type]?",
+        "Treats for [pet_type]?",
+        "Diet for a [pet_type] with [condition]?"
+      ],
+      "responses": [
+        "The ideal diet for your {pet_type} depends on their age, breed, and health. PetMD offers information on food and diet. It's always best to consult with your veterinarian.",
+        "For a {age} {pet_type}, it's important to choose a food formulated for their life stage. PetMD has articles on puppy/kitten, adult, and senior care.",
+        "Feeding amounts for a {weight} {pet_type} vary. Check the food packaging guidelines and consult your vet. PetMD may have general guidelines.",
+        "Proper nutrition is vital for a {pet_type}'s health. PetMD provides information on this. What specific nutritional questions do you have?",
+        "It's important to check if [food_item] is safe for your {pet_type}. PetMD may have information on food safety and poisoning.",
+        "Signs of a food allergy in {pet_type}s can include... Consult PetMD or your veterinarian for more details.",
+        "Treats can be part of a healthy diet in moderation. Choose healthy options. PetMD may have some recommendations.",
+        "A {pet_type} with [condition] may have specific dietary needs. Your veterinarian is the best resource for this. PetMD might have some general information."
+      ]
     },
     {
-        "tag": "about",
-        "patterns": ["What can you do", "Who are you", "What are you", "What is your purpose"],
-        "responses": ["I am a chatbot", "My purpose is to assist you", "I can answer questions and provide assistance"]
+      "tag": "health_wellness",
+      "patterns": [
+        "How to keep my [pet_type] healthy?",
+        "Signs of illness in a [pet_type]?",
+        "Preventative care for [pet_type]s?",
+        "Importance of vaccinations for [pet_type]?",
+        "Parasite prevention for [pet_type]s?",
+        "Dental care for [pet_type]s?",
+        "Common health problems in [pet_type]s?",
+        "My pet has [symptom]",
+        "What are the symptoms of [disease] in [pet_type]?",
+        "What to do if my [pet_type] is [symptom]?",
+        "Is [symptom] serious for my [pet_type]?"
+      ],
+      "responses": [
+        "Keeping your {pet_type} healthy involves regular veterinary check-ups, vaccinations, parasite prevention, proper nutrition, and exercise. PetMD covers these topics.",
+        "Signs of illness in a {pet_type} can vary. PetMD has a symptom checker and information on diseases. If you are concerned, consult your vet.",
+        "Preventative care for {pet_type}s includes vaccinations, regular deworming, flea and tick control. PetMD provides information on these.",
+        "Vaccinations are crucial for protecting your {pet_type} from serious diseases. Discuss the necessary vaccines with your veterinarian.",
+        "Protecting your {pet_type} from parasites like fleas, ticks, and heartworms is essential. PetMD has information on flea and tick prevention and heartworm.",
+        "Dental care is important for a {pet_type}'s overall health. PetMD may have articles on this.",
+        "Common health problems in {pet_type}s vary by species and breed. PetMD has information on various diseases and injuries.",
+         "I understand you're concerned about your {pet_type}'s {symptom}. PetMD has a symptom checker that might be helpful, but it's best to consult with a veterinarian for a proper diagnosis and treatment plan.",
+        "PetMD may have information on the symptoms of [disease] in [pet_type]. However, a veterinarian is the best source for accurate information.",
+         "If your {pet_type} is experiencing {symptom}, it's important to monitor them closely and consult with a veterinarian. PetMD may offer some general advice, but professional help is crucial.",
+        "The seriousness of [symptom] for your {pet_type} depends on various factors. It's always best to consult with a veterinarian to determine the appropriate course of action."
+      ]
     },
     {
-        "tag": "help",
-        "patterns": ["Help", "I need help", "Can you help me", "What should I do"],
-        "responses": ["Sure, what do you need help with?", "I'm here to help. What's the problem?", "How can I assist you?"]
+      "tag": "behavior_training",
+      "patterns": [
+        "How to train my [pet_type]?",
+        "Dealing with [behavior_issue] in my [pet_type]?",
+        "Positive reinforcement training for [pet_type]s?",
+        "Socialization of a [young_pet_type]?",
+        "Understanding [pet_type] behavior?",
+        "Why is my [pet_type] doing [behavior]?"
+      ],
+      "responses": [
+        "Training a {pet_type} often involves patience and positive reinforcement. PetMD may have articles on training and behavior.",
+        "Dealing with [behavior_issue] in your {pet_type} can be challenging. PetMD may have resources on common behavioral issues.",
+        "Positive reinforcement is a humane way to train {pet_type}s. PetMD might have some information on this.",
+        "Socialization is important for young {young_pet_type}s. PetMD may have advice on this.",
+        "Understanding {pet_type} behavior involves learning about their instincts. PetMD may provide some insights.",
+        "There could be various reasons why your {pet_type} is doing [behavior]. PetMD or a professional trainer may be helpful."
+      ]
     },
     {
-        "tag": "age",
-        "patterns": ["How old are you", "What's your age"],
-        "responses": ["I don't have an age. I'm a chatbot.", "I was just born in the digital world.", "Age is just a number for me."]
+      "tag": "safety_emergencies",
+      "patterns": [
+        "Pet safety tips?",
+        "What to do in a pet emergency?",
+        "Recognizing pet emergencies?",
+        "Pet-proofing my home?",
+        "Traveling safely with my [pet_type]?",
+        "What are common pet toxins?",
+        "First aid for pets?"
+      ],
+      "responses": [
+        "Pet safety involves protecting them from hazards. PetMD may have articles on poisoning and general safety.",
+        "In a pet emergency, seek immediate veterinary care. Know the location of your nearest emergency vet.",
+        "Recognizing pet emergencies involves being aware of signs like difficulty breathing or severe bleeding. If you observe these, seek immediate help.",
+        "Pet-proofing your home involves removing potential hazards. PetMD may have some tips.",
+        "Traveling safely with your {pet_type} requires proper restraint. PetMD might have some advice.",
+        "Common pet toxins include certain human foods and household cleaners. PetMD may have a list.",
+        "Basic first aid for pets can help stabilize them, but it's not a substitute for veterinary care."
+      ]
+    },
+     {
+      "tag": "breeds",
+      "patterns": [
+        "Tell me about the [breed] breed",
+        "What are the characteristics of [breed]s?",
+        "Is a [breed] a good pet?",
+        "What are common health problems for [breed]s?",
+        "Grooming needs for a [breed]?",
+        "Exercise needs for a [breed]?"
+      ],
+      "responses": [
+        "PetMD provides information on many different breeds of dogs and cats. What specifically would you like to know about the {breed} breed?",
+        "Characteristics of {breed}s often include... (Check PetMD for breed-specific information).",
+        "Whether a {breed} is a good pet depends on your lifestyle and their needs. PetMD has breed profiles that can help you decide.",
+        "Common health problems for {breed}s can include... (Refer to PetMD for breed-specific health information).",
+        "Grooming needs for a {breed} vary. PetMD may have information on this.",
+        "Exercise needs for a {breed} depend on their energy level. PetMD may provide some guidelines."
+      ]
     },
     {
-        "tag": "weather",
-        "patterns": ["What's the weather like", "How's the weather today"],
-        "responses": ["I'm sorry, I cannot provide real-time weather information.", "You can check the weather on a weather app or website."]
+      "tag": "medications",
+      "patterns": [
+        "What is [medication] used for in pets?",
+        "Side effects of [medication] in [pet_type]s?",
+        "Dosage of [medication] for my [pet_type]?",
+        "Is [medication] safe for my [pet_type]?",
+        "What are the alternatives to [medication]?",
+        "How to administer [medication] to my [pet_type]?"
+      ],
+      "responses": [
+        "PetMD may have information on what [medication] is used for in pets. However, always consult with your veterinarian for specific guidance.",
+        "PetMD may list some potential side effects of [medication] in {pet_type}s. Always discuss any concerns with your veterinarian.",
+        "Dosage of [medication] for your {pet_type} should only be determined by your veterinarian. Never adjust the dosage without consulting them.",
+        "Whether [medication] is safe for your {pet_type} depends on their individual health. Always consult your veterinarian.",
+        "Alternatives to [medication] depend on the condition being treated. Discuss options with your veterinarian.",
+        "Your veterinarian should provide instructions on how to administer [medication] to your {pet_type}. Follow their instructions carefully."
+      ]
     },
     {
-        "tag": "budget",
-        "patterns": ["How can I make a budget", "What's a good budgeting strategy", "How do I create a budget"],
-        "responses": ["To make a budget, start by tracking your income and expenses. Then, allocate your income towards essential expenses like rent, food, and bills. Next, allocate some of your income towards savings and debt repayment. Finally, allocate the remainder of your income towards discretionary expenses like entertainment and hobbies.", "A good budgeting strategy is to use the 50/30/20 rule. This means allocating 50% of your income towards essential expenses, 30% towards discretionary expenses, and 20% towards savings and debt repayment.", "To create a budget, start by setting financial goals for yourself. Then, track your income and expenses for a few months to get a sense of where your money is going. Next, create a budget by allocating your income towards essential expenses, savings and debt repayment, and discretionary expenses."]
+      "tag": "fleas_ticks_heartworm",
+      "patterns": [
+        "How to prevent fleas and ticks on my [pet_type]?",
+        "What are the symptoms of fleas on a [pet_type]?",
+        "Best flea and tick treatment for [pet_type]s?",
+        "What is heartworm disease in pets?",
+        "Heartworm prevention for [pet_type]s?",
+        "Symptoms of heartworm in [pet_type]s?"
+      ],
+      "responses": [
+        "PetMD has information on flea and tick prevention for {pet_type}s. Consult their resources and your veterinarian.",
+        "Symptoms of fleas on a {pet_type} can include... (Check PetMD for specific symptoms).",
+        "The best flea and tick treatment for {pet_type}s depends on their species and lifestyle. Consult your veterinarian.",
+        "PetMD can provide information on what heartworm disease is in pets.",
+        "Heartworm prevention for {pet_type}s is crucial. Discuss preventative options with your veterinarian.",
+        "PetMD may have information on the symptoms of heartworm in {pet_type}s. Consult their resources and your veterinarian."
+      ]
     },
     {
-        "tag": "credit_score",
-        "patterns": ["What is a credit score", "How do I check my credit score", "How can I improve my credit score"],
-        "responses": ["A credit score is a number that represents your creditworthiness. It is based on your credit history and is used by lenders to determine whether or not to lend you money. The higher your credit score, the more likely you are to be approved for credit.", "You can check your credit score for free on several websites such as Credit Karma and Credit Sesame."]
+      "tag": "poisoning",
+      "patterns": [
+        "My pet ate [substance]",
+        "What to do if my pet is poisoned?",
+        "Signs of poisoning in pets?",
+        "Toxic foods for pets?",
+        "Toxic plants for pets?",
+        "Pet poison control information?"
+      ],
+      "responses": [
+        "If your pet ate [substance], contact your veterinarian or the Pet Poison Helpline immediately!",
+        "If you suspect your pet is poisoned, seek immediate veterinary care. Time is critical.",
+        "Signs of poisoning in pets can vary. Contact your veterinarian or the Pet Poison Helpline if you are concerned.",
+        "PetMD may have information on toxic foods for pets. Always check before giving your pet something new.",
+        "PetMD may have information on toxic plants for pets. Be careful about what plants you have in your home and yard.",
+        "The Pet Poison Helpline is a valuable resource for pet poisoning information. Their number is [Pet Poison Helpline number]."
+      ]
+    },
+    {
+      "tag": "emergency",
+      "patterns": [
+        "My pet is [emergency_situation]",
+        "I think my pet has been poisoned",
+        "My pet is having trouble breathing",
+        "My pet is bleeding heavily",
+        "What to do in case of a pet emergency?",
+        "Where is the nearest emergency vet?",
+        "My pet collapsed"
+      ],
+      "responses": [
+        "This sounds like an emergency! Please seek immediate veterinary care. If you know the nearest emergency vet clinic, go there right away.",
+        "If you suspect your pet has been poisoned, contact your veterinarian or the Pet Poison Helpline immediately!",
+        "Difficulty breathing is a serious emergency. Please take your pet to the nearest emergency veterinary clinic immediately.",
+        "Heavy bleeding requires immediate veterinary attention. Apply pressure to the wound while transporting your pet to the nearest emergency vet.",
+        "In case of a pet emergency, stay calm and contact your veterinarian or the nearest emergency animal hospital immediately.",
+        "I cannot provide real-time location information for emergency vets. Please search online for 'emergency vet near me' or contact your regular vet for their emergency protocols."
+      ]
+    },
+    {
+      "tag": "puppies_kittens",
+      "patterns": [
+        "How to care for a puppy?",
+        "How to care for a kitten?",
+        "Feeding a puppy",
+        "Feeding a kitten",
+        "Vaccinations for puppies",
+        "Vaccinations for kittens",
+        "Training a puppy",
+        "Training a kitten",
+        "Socializing a puppy",
+        "Socializing a kitten"
+      ],
+      "responses": [
+        "PetMD has a section dedicated to puppies and kittens. What specific information are you looking for?",
+        "PetMD provides information on feeding puppies. What kind of food are you interested in?",
+        "PetMD provides information on feeding kittens. What kind of food are you interested in?",
+        "PetMD provides information on vaccinations for puppies. What vaccinations are you interested in?",
+        "PetMD provides information on vaccinations for kittens. What vaccinations are you interested in?",
+        "PetMD may have information on training puppies. What kind of training are you interested in?",
+        "PetMD may have information on training kittens. What kind of training are you interested in?",
+        "PetMD may have information on socializing puppies. What kind of socialization are you interested in?",
+        "PetMD may have information on socializing kittens. What kind of socialization are you interested in?"
+      ]
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": [
+        "I'm sorry, I didn't understand that. Could you please rephrase your question about pet health?",
+        "Could you please provide more details? I'm here to help with your pet care inquiries based on PetMD.",
+        "I'm not sure I have the information you're looking for. Could you try asking in a different way?",
+        "Let me see if I can find information on that topic on PetMD. Could you be more specific?",
+        "I can help with questions about general pet care, health, behavior, safety, and more, based on PetMD resources. How can I assist you?"
+      ]
     }
-]
-  
-  
+  ]
+}
